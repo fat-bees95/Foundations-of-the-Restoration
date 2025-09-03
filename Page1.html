@@ -1,0 +1,103 @@
+<div class="lesson-page">
+  <div class="steps">
+
+    <!-- Step 1: Paragraph -->
+    <div class="step hidden">
+      <p>Imagine being a new convert to the Lord’s restored Church in Joseph Smith’s time.</p>
+    </div>
+
+    <!-- Step 2: Paragraph -->
+    <div class="step hidden">
+      <p>Your view of Heavenly Father’s plan would have been incomplete...</p>
+    </div>
+
+    <!-- Step 3: Paragraph -->
+    <div class="step hidden">
+      <p>(1) God, Jesus, and the Holy Spirit are one God, without body, parts, or passions;</p>
+    </div>
+
+    <!-- Step 4: Paragraph -->
+    <div class="step hidden">
+      <p>(2) humans had no existence prior to this life, and they were created by God out of nothing; and </p>
+    </div>
+
+    <!-- Step 4: Paragraph -->
+    <div class="step hidden">
+      <p>(3) God is unknowable and mysterious—the idea of humans being His children is only a metaphor.</p>
+    </div>
+
+    <!-- Step 4: Image -->
+    <div class="step hidden">
+      <img src="Background/Elder-Robert-D-Hales.jpg" 
+           alt="Elder Hales"
+           class="lesson-image" />
+    </div>
+
+    <!-- Step 5: Paragraph -->
+    <div class="step hidden">
+      <p>When speaking of immortality and eternal life, Elder Robert D. Hales of the Quorum of the Twelve Apostles taught:</p>
+    </div>
+
+    <!-- Step 5: Image -->
+    <div class="step hidden">
+      <img src="Background/Elder-Hales-quote.jpg" 
+           alt="Elder Hales´quote"
+           class="lesson-image" />
+    </div>
+
+    <!-- Step 5: Image -->
+    <div class="step hidden">
+      <img src="Background/Prophet-Joseph-Smith-quote.jpg" 
+           alt="Joseph Smith´s quote"
+           class="lesson-image" />
+    </div>
+
+    <!-- Step 5: Image -->
+    <div class="step hidden">
+      <img src="Background/Moses_1_verses_37-39.jpg" 
+           alt="Joseph Smith´s quote"
+           class="lesson-image" />
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <div class="paragraph-nav">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+</div>
+
+<script>
+  let currentStep = 0;
+
+  function showStep(index) {
+    const steps = document.querySelectorAll('.steps .step');
+    steps.forEach((step, i) => {
+      step.style.display = i === index ? 'block' : 'none';
+    });
+
+    // disable buttons at edges
+    document.getElementById('prevBtn').disabled = index === 0;
+    document.getElementById('nextBtn').disabled = index === steps.length - 1;
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    const steps = document.querySelectorAll('.steps .step');
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  // show the first step by default
+  showStep(currentStep);
+</script>
+
